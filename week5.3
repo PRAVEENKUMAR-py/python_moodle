@@ -1,0 +1,11 @@
+a= set()
+b= []
+while True:
+    word= input().strip()
+    if not word:
+        break
+    if word not in a:
+        a.add(word)
+        b.append(word)
+for word in b:
+    print(word)
