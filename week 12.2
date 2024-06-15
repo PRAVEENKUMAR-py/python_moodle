@@ -1,0 +1,24 @@
+def calculate_average_marks(records):
+    total_marks = 0
+    num_students = len(records)
+   
+    for record in records:
+        total_marks += int(record['MARKS'])
+   
+    return total_marks / num_students if num_students > 0 else 0
+
+try:
+    n = int(input())
+    columns = input().split()
+    records = []
+
+    for _ in range(n):
+        data = input().split()
+        record = {columns[i]: data[i] for i in range(len(columns))}
+        records.append(record)
+   
+    average_marks = calculate_average_marks(records)
+   
+    print("{:.2f}".format(average_marks))
+except ValueError:
+    print("Invalid input format. Please enter integers for marks.")
