@@ -1,0 +1,16 @@
+def check_age(age):
+    try:
+        age = int(age)
+        if age < 0:
+            print("Error: Please enter a valid age.")
+        else:
+            print("You are {} years old.".format(age))
+    except ValueError:
+        print("Error: Please enter a valid age.")
+
+if __name__ == "__main__":
+    try:
+        user_input = input()
+        check_age(user_input)
+    except EOFError:
+        print("Error: Please enter a valid age.")
