@@ -1,0 +1,11 @@
+a= {}
+n=int(input())
+for _ in range(n):
+    key,*x = input().split()
+    a[key] = list(map(int,x))
+
+b= [key for key, _ in sorted(a.items(), key=lambda item: sum(item[1]))]
+c= {key: sum(a[key]) for key in b}
+
+for key, x in c.items():
+    print(key,x)
